@@ -1,24 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cryptocurrencies</title>
+    <title>Crypto</title>
+
+    <!-- lato font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+    <!-- app style -->
+    <link rel="stylesheet" href="./style/index.css">
 </head>
+
 <body>
-    <h2>Base: <span tw-binding="base"></span></h2>
-    <h2>Target: <span tw-binding="target"></span></h2>
-    <h2>Price: <span tw-binding="price"></span></h2>
-    <h2>Volume: <span tw-binding="volume"></span></h2>
-    <h2>Change: <span tw-binding="change"></span></h2>
-    <h2 style="color:red">Error: <span tw-binding="error"></span></h2>
-    <input type="text" id="cryptoInput" placeholder="Insert a cryptocurrency code">
+
+    <!-- update bar -->
+    <div id="update-bar" class="display-none">
+        <div></div>
+    </div>
+
+    <!-- crypto panel -->
+    <section class="panel center_x">
+        <!-- loader -->
+        <div class="lds-ring center display-none panel-body" id="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- welcome message -->
+        <div id="welcome-message" class="center panel-body">
+            <p>Crypto Currency Panel</p>
+        </div>
+
+        <!-- crypto info -->
+        <div id="crypto-currency-info" class="display-none  panel-body fade-in">
+            <!-- first row -->
+            <div class="flex-container">
+                <!-- base -->
+                <div>
+                    <img src="./assets/002-bitcoin.png" alt="">
+                    <span>Base: <span tw-binding="base"></span> </span>
+                </div>
+                <!-- price -->
+                <div>
+                    <img src="./assets/001-coin.png" alt="">
+                    <span>Price: <span tw-binding="price"></span> </span>
+                </div>
+            </div>
+            <!-- second row -->
+            <div class="flex-container">
+                <!-- target -->
+                <div>
+                    <img src="./assets/006-money.png" alt="">
+                    <span>Target: <span tw-binding="target"></span> </span>
+                </div>
+                <!-- volume -->
+                <div>
+                    <img src="./assets/003-volume-level-indicator.png" alt="">
+                    <span>Volume: <span tw-binding="volume"></span> </span>
+                </div>
+            </div>
+            <!-- third row -->
+            <div class="flex-container">
+                <!-- change -->
+                <div>
+                    <img id="price-change-icon" src="" alt="">
+                    <span tw-binding="change"></span>
+                </div>
+            </div>
+
+            <p id="date" tw-binding="date"></p>
+        </div>
+
+        <!-- error -->
+        <div id="error-message" class="center display-none  panel-body">
+            <p tw-binding="error"></p>
+        </div>
+    </section>
+
+    <!-- input for crypto currency -->
+    <input type="text" id="crypto-code-input" class="center_x" placeholder="Crypto Code">
+
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/index.js"></script>
 
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- two way data binding -->
+    <script src="./scripts/twoWayDataBinding.js"></script>
+    <!-- controller -->
+    <script src="./scripts/index.js"></script>
 </body>
+
 </html>

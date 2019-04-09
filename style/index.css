@@ -1,0 +1,233 @@
+/* ================================ CSS Reset  ================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ================================ CSS Loader  ================================*/
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 2px solid #EE2771;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #EE2771 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*================================ General Style ================================ */
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #FCFCFC;
+    color: #272727;
+}
+
+input {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+img {
+    width: 27px;
+}
+
+/*================================ General Used Classes ================================ */
+
+/* center classes */
+
+.center {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.center_x {
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+/* display */
+
+.flex-container {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.flex-container>* {
+    flex: 1 1 0;
+}
+
+
+.flex-container>div>img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.flex-container:last-of-type {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fade-in .5s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+/*================================ update Bar ================================ */
+
+#update-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #707070;
+}
+
+#update-bar>div {
+    /* width: 150px; */
+    width: 1%;
+    height: inherit;
+    background-color: #EE2771;
+}
+
+/*================================ Crypto Panel ================================ */
+
+.panel {
+    width: 55%;
+    height: 61%;
+    padding: 50px 30px;
+    background-color: #fff;
+    box-shadow: 0px 2px 14px 2px rgba(000, 000, 000, 0.1);
+    font-weight: 700;
+    top: 11%;
+}
+
+#crypto-currency-info {
+    transition: opacity .5s;
+}
+
+#date {
+    position: absolute;
+    bottom: 10px;
+    font-size: 10px;
+    color: #707070;
+}
+
+#error-message {
+    color: #E74C3C;
+}
+
+#welcome-message {
+    font-style: italic;
+}
+
+/*================================ Crypto Input ================================ */
+
+#crypto-code-input {
+    position: absolute;
+    bottom: 40px;
+    border-bottom: 1.5px solid #707070;
+    width: 70%;
+}
+
+.input-error-hint {
+    border-bottom: 1.5px solid #E74C3C !important;
+}
+
+/*  */
+
+/*================================ Media ================================ */
+
+@media only screen and (max-width: 900px) {
+    .panel {
+        width: 75%;
+    }
+}
